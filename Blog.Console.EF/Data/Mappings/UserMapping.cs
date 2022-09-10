@@ -51,6 +51,8 @@ namespace Blog.Console.EF.Data.Mappings
                 .HasColumnType("VARCHAR")
                 .HasMaxLength(80);
 
+            builder.Property(x => x.GitHub);
+
             builder.HasMany(x => x.Roles)
                 .WithMany(x => x.Users)
                 .UsingEntity<Dictionary<string, object>>(
